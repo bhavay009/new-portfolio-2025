@@ -211,13 +211,13 @@ export const SkillsInfo = [
     },
     {
       id: 2,
-      title: "E-commerce Website",
+      title: "Hydration-Tracker",
       description:
-        "A React-based web application that provides movie recommendations based on different criteria, such as genres, user preferences, and popular trends. The intuitive design and smooth experience make it a go-to app for movie enthusiasts.",
+        "Developed a responsive hydration tracker web app using React.js to monitor daily water intake. The app features an intuitive UI for logging water consumption, real-time progress tracking, and visual indicators to help users stay on target with their hydration goals.",
       // image: movierecLogo,
-      tags: ["React JS", "API", "HTML", "CSS", "JavaScript"],
-      github: "https://github.com/codingmastr/Movie-Recommendation-App",
-      webapp: "https://movie-recommendation-app-jet.vercel.app/",
+      tags: ["React JS", "HTML", "CSS", "JavaScript"],
+      github: "https://github.com/bhavay009/hydration-Tracker-project-.git",
+      webapp: "https://hydraration-tracker.netlify.app/",
     },
     // {
     //   id: 3,
