@@ -29,7 +29,9 @@ const Work = () => {
 
       {/* Projects Grid */}
       <div className="grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
+        {projects.map((project) => {
+          console.log('project image:', project.title, project.image);
+          return (
           <div
             key={project.id}
             onClick={() => handleOpenModal(project)}
@@ -41,6 +43,7 @@ const Work = () => {
                 alt={project.title}
                 className="w-full h-48 object-cover rounded-xl"
               />
+
             </div>
             <div className="p-6">
               <h3 className="text-2xl font-bold text-white mb-2">
@@ -61,7 +64,8 @@ const Work = () => {
               </div>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       {selectedProject && (

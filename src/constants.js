@@ -44,8 +44,9 @@ import bsaLogo from './assets/education_logo/bsa_logo.png';
 import vpsLogo from './assets/education_logo/vps_logo.png';
 
 // Project Section Logo's
-import githubdetLogo from './assets/work_logo/github_det.png';
-import csprepLogo from './assets/work_logo/cs_prep.png';
+import eventease from './assets/work_logo/eventease.png';
+import ai from './assets/work_logo/virtualAI.png';
+import water from './assets/work_logo/hydration.png';
 import movierecLogo from './assets/work_logo/movie_rec.png';
 import taskremLogo from './assets/work_logo/task_rem.png';
 import npmLogo from './assets/work_logo/npm.png';
@@ -69,20 +70,20 @@ export const SkillsInfo = [
       { name: 'Next JS', logo: nextjsLogo },
       { name: 'Tailwind CSS', logo: tailwindcssLogo },
       // { name: 'GSAP', logo: gsapLogo },
-      { name: 'Material UI', logo: materialuiLogo },
-      { name: 'Bootstrap', logo: bootstrapLogo },
+      // { name: 'Material UI', logo: materialuiLogo }, 
+      // { name: 'Bootstrap', logo: bootstrapLogo },
     ],
   },
   {
     title: 'Backend',
     skills: [
-      { name: 'Springboot', logo: springbootLogo },
+      // { name: 'Springboot', logo: springbootLogo },
       { name: 'Node JS', logo: nodejsLogo },
       { name: 'Express JS', logo: expressjsLogo },
-      { name: 'MySQL', logo: mysqlLogo }
-      // { name: 'MongoDB', logo: mongodbLogo },
-      // { name: 'Firebase', logo: firebaseLogo },
-      // { name: 'PostgreSQL', logo: postgreLogo },
+      { name: 'MySQL', logo: mysqlLogo },
+      { name: 'MongoDB', logo: mongodbLogo },
+      { name: 'Firebase', logo: firebaseLogo },
+      { name: 'PostgreSQL', logo: postgreLogo }
     ],
   },
   {
@@ -94,7 +95,7 @@ export const SkillsInfo = [
       { name: 'Python', logo: pythonLogo },
       // { name: 'C-Sharp', logo: csharpLogo },
       { name: 'JavaScript', logo: javascriptLogo },
-      // { name: 'TypeScript', logo: typescriptLogo },
+      { name: 'TypeScript', logo: typescriptLogo },
     ],
   },
   {
@@ -103,8 +104,8 @@ export const SkillsInfo = [
       { name: 'Git', logo: gitLogo },
       { name: 'GitHub', logo: githubLogo },
       { name: 'VS Code', logo: vscodeLogo },
-      // { name: 'Postman', logo: postmanLogo },
-      // { name: 'Compass', logo: mcLogo },
+      { name: 'Postman', logo: postmanLogo },
+      { name: 'Compass', logo: mcLogo },
       { name: 'Vercel', logo: vercelLogo },
       { name: 'Netlify', logo: netlifyLogo },
       { name: 'Figma', logo: figmaLogo },
@@ -192,19 +193,19 @@ export const SkillsInfo = [
   export const projects = [
     {
       id: 0,
-      title: "Quiz App",
-      description:"Designed and developed an interactive quiz application. Features include multiple-choice questions, real-time score tracking.",
-      // image: githubdetLogo,
-      tags: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/bhavay009/quiz-app.git",
-      webapp: "https://quizappp09.netlify.app/",
+      title: "EventEase",
+      description:"A dynamic event management web application that allows users to create, manage, and participate in events seamlessly. Built with React.js for the frontend and Node.js for the backend, it features user authentication, event creation, RSVP functionality, and real-time notifications.",
+      image: eventease,
+      tags: ["HTML", "CSS", "JavaScript","MYSQL","React JS","Node JS"],
+      github: "https://github.com/bhavay009/eventEase.git",
+      webapp: "https://event-ease-eta-lovat.vercel.app/",
     },
     {
       id: 1,
       title: "Virtual AI",
       description:
         "Built a responsive virtual assistant with voice recognition, text-to-speech, AI responses via Google Gemini, and basic math solving. Features include opening websites, telling time/date, and interactive animated prompts with a modern UI.",
-      // image: csprepLogo,
+      image: ai,
       tags: ["React JS", "HTML", "CSS", "JavaScript"],
       github: "https://github.com/bhavay009/new-virtual-AI.git",
       webapp: "https://vercel.com/bhavay009s-projects/new-virtual-ai",
@@ -214,7 +215,7 @@ export const SkillsInfo = [
       title: "Hydration-Tracker",
       description:
         "Developed a responsive hydration tracker web app using React.js to monitor daily water intake. The app features an intuitive UI for logging water consumption, real-time progress tracking, and visual indicators to help users stay on target with their hydration goals.",
-      // image: movierecLogo,
+      image: water,
       tags: ["React JS", "HTML", "CSS", "JavaScript"],
       github: "https://github.com/bhavay009/hydration-Tracker-project-.git",
       webapp: "https://hydraration-tracker.netlify.app/",
@@ -226,9 +227,9 @@ export const SkillsInfo = [
     //     "An efficient and customizable NPM package for validating email addresses. Built using React.js and Node.js, it provides robust validation features to help developers ensure that email inputs meet required formats and standards.",
     //   image: npmLogo,
     //   tags: ["React JS", "Node.js", "NPM", "Validation"],
-    //   github: "https://github.com/codingmastr/cmtk-email-validator",
+    //   github: "https://github.com/bhavay009/cmtk-email-validator",
     //   webapp: "https://www.npmjs.com/package/cmtk-email-validator",
-    // },
+    // }
     // {
     //   id: 4,
     //   title: "Task Reminder Chrome Extension Tool",
@@ -236,9 +237,9 @@ export const SkillsInfo = [
     //     "A productivity-boosting Chrome extension designed to help users manage and remember their daily tasks. Built using JavaScript, it offers a simple interface with reminders and task notifications to keep users on track.",
     //   image: taskremLogo,
     //   tags: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
-    //   github: "https://github.com/codingmastr/Task-Reminder-Tool",
+    //   github: "https://github.com/bhavay009/Task-Reminder-Tool",
     //   webapp: "chrome://extensions/?id=kngheeibjnnidhfoomkpnbeghackheci",
-    // },
+    // }
     // {
     //   id: 5,
     //   title: "Webverse Digital",
@@ -246,7 +247,7 @@ export const SkillsInfo = [
     //     "The official website for Webverse Digital, a creative digital marketing agency. Built using HTML, CSS, and JavaScript, it features visually appealing animations and a clean design to showcase the agency's services.",
     //   image: webverLogo,
     //   tags: ["HTML", "CSS", "JavaScript", "Framer Motion"],
-    //   github: "https://github.com/codingmastr/Webverse-Digital",
+    //   github: "https://github.com/bhavay009/Webverse-Digital",
     //   webapp: "https://webversedigital.com/",
     // }
   ];  
