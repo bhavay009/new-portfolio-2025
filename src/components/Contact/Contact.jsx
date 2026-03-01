@@ -1,26 +1,24 @@
-import React, { useRef, useState } from "react";
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const form = useRef();
-  const [isSent, setIsSent] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_kr8ynle",  // Replace with your EmailJS Service ID
-        "template_av6dpan",  // Replace with your EmailJS Template ID
+        "service_kr8ynle",
+        "template_av6dpan",
         form.current,
-        "BwiGh_gzvR8f2vFW2"  // Replace with your EmailJS Public Key
+        "BwiGh_gzvR8f2vFW2"
       )
       .then(
         () => {
-          setIsSent(true);
-          form.current.reset(); // Reset form fields after sending
+          form.current.reset();
           toast.success("Message sent successfully! ✅", {
             position: "top-right",
             autoClose: 3000,
@@ -49,62 +47,80 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]"
+      className="flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw] relative"
     >
-      {/* Toast Container */}
       <ToastContainer />
 
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-10 w-40 h-40 border border-primary-500/5 rounded-full animate-spin-slow pointer-events-none hidden lg:block" />
+      <div className="absolute bottom-20 right-10 w-28 h-28 border border-indigo-500/5 rounded-full animate-spin-slow pointer-events-none hidden lg:block" style={{ animationDirection: 'reverse' }} />
+
       {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">CONTACT</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          I’d love to hear from you—reach out for any opportunities or questions!
+      <div className="text-center mb-12 animate-on-scroll">
+        <h2 className="text-3xl sm:text-4xl font-display font-bold text-white section-title">
+          CONTACT
+        </h2>
+        <p className="text-gray-500 mt-8 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          I'd love to hear from you—reach out for any opportunities or questions!
         </p>
       </div>
 
       {/* Contact Form */}
-      <div className="mt-8 w-full max-w-md bg-[#0d081f] p-6 rounded-lg shadow-lg border border-gray-700">
-        <h3 className="text-xl font-semibold text-white text-center">
+      <div className="animate-on-scroll scale-up w-full max-w-lg glass-card gradient-border rounded-2xl p-8 relative">
+        <h3 className="text-xl font-display font-semibold text-white text-center mb-6">
           Connect With Me <span className="ml-1">🚀</span>
         </h3>
 
-        <form ref={form} onSubmit={sendEmail} className="mt-4 flex flex-col space-y-4">
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Your Email"
-            required
-            className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500"
-          />
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Your Name"
-            required
-            className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500"
-          />
-          <input
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            required
-            className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500"
-          />
-          <textarea
-            name="message"
-            placeholder="Message"
-            rows="4"
-            required
-            className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500"
-          />
-          
-          {/* Send Button */}
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col space-y-4">
+          <div className="space-y-1">
+            <label className="text-xs text-gray-500 font-medium uppercase tracking-wide">Email</label>
+            <input
+              type="email"
+              name="user_email"
+              placeholder="your@email.com"
+              required
+              className="input-glow w-full p-3.5 rounded-xl bg-white/[0.03] text-white border border-white/10 focus:outline-none placeholder-gray-600 text-sm"
+            />
+          </div>
+          <div className="space-y-1">
+            <label className="text-xs text-gray-500 font-medium uppercase tracking-wide">Name</label>
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Your name"
+              required
+              className="input-glow w-full p-3.5 rounded-xl bg-white/[0.03] text-white border border-white/10 focus:outline-none placeholder-gray-600 text-sm"
+            />
+          </div>
+          <div className="space-y-1">
+            <label className="text-xs text-gray-500 font-medium uppercase tracking-wide">Subject</label>
+            <input
+              type="text"
+              name="subject"
+              placeholder="What's this about?"
+              required
+              className="input-glow w-full p-3.5 rounded-xl bg-white/[0.03] text-white border border-white/10 focus:outline-none placeholder-gray-600 text-sm"
+            />
+          </div>
+          <div className="space-y-1">
+            <label className="text-xs text-gray-500 font-medium uppercase tracking-wide">Message</label>
+            <textarea
+              name="message"
+              placeholder="Tell me about your project..."
+              rows="4"
+              required
+              className="input-glow w-full p-3.5 rounded-xl bg-white/[0.03] text-white border border-white/10 focus:outline-none placeholder-gray-600 text-sm resize-none"
+            />
+          </div>
+
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-500 py-3 text-white font-semibold rounded-md hover:opacity-90 transition"
+            className="w-full py-3.5 text-white font-semibold rounded-xl text-sm transition-all duration-500 btn-shimmer hover:shadow-[0_0_30px_rgba(130,69,236,0.3)] hover:scale-[1.02] active:scale-[0.98]"
+            style={{
+              background: "linear-gradient(135deg, #8245ec, #a855f7, #6366f1)",
+            }}
           >
-            Send
+            Send Message
           </button>
         </form>
       </div>

@@ -1,31 +1,36 @@
 // components/BlurBlob.jsx
-import React from 'react';
 import PropTypes from 'prop-types';
 
-const BlurBlob = ({ position, size }) => {
-  // Destructure position and size with default values
-  const { top, left } = position
-  const { width, height } = size 
+const BlurBlob = ({ position, size, color = 'purple' }) => {
+  const { top, left } = position;
+  const { width, height } = size;
+
+  const colorMap = {
+    purple: 'bg-purple-500',
+    blue: 'bg-blue-500',
+    pink: 'bg-pink-500',
+    indigo: 'bg-indigo-500',
+    violet: 'bg-violet-600',
+  };
 
   return (
     <div
-      className="absolute"
+      className="absolute pointer-events-none"
       style={{
-        top: top,
-        left: left,
-        width: width,
-        height: height,
+        top,
+        left,
+        width,
+        height,
         transform: 'translate(-50%, -50%)',
       }}
     >
       <div
-        className="w-full h-full bg-purple-500 rounded-full opacity-20 blur-3xl animate-blob"
-      ></div>
+        className={`w-full h-full ${colorMap[color] || colorMap.purple} rounded-full opacity-15 blur-3xl animate-blob`}
+      />
     </div>
   );
 };
 
-// Define prop types
 BlurBlob.propTypes = {
   position: PropTypes.shape({
     top: PropTypes.string,
@@ -35,6 +40,7 @@ BlurBlob.propTypes = {
     width: PropTypes.string,
     height: PropTypes.string,
   }),
+  color: PropTypes.string,
 };
 
 export default BlurBlob;
